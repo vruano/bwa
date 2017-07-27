@@ -232,6 +232,11 @@ int bwa_index(int argc, char *argv[]) // the "index" command
 
 	if (optind + 1 > argc) {
 		fprintf(stderr, "\n");
+                if (argc == 6) 
+                fprintf(stderr, "Call: bwa %s %s %s %s %s %s\n\n", argv[0], argv[1], argv[2], argv[3], argv[4], argv[5]); 
+                if (argc == 4)
+                fprintf(stderr, "Call: bwa %s %s %s %s\n\n", argv[0], argv[1], argv[2], argv[3]); 
+
 		fprintf(stderr, "Usage:   bwa index [options] <in.fasta>\n\n");
 		fprintf(stderr, "Options: -a STR    BWT construction algorithm: is or rb2 [auto]\n");
 		fprintf(stderr, "         -p STR    prefix of the index [same as fasta name]\n");
