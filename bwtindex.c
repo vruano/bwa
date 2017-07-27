@@ -147,6 +147,8 @@ int bwa_pac2bwt(int argc, char *argv[]) // the "pac2bwt" command; IMPORTANT: bwt
 
 #define bwt_B00(b, k) ((b)->bwt[(k)>>4]>>((~(k)&0xf)<<1)&3)
 
+extern void bwt_bwtupdate_core(bwt_t *bwt);
+
 void bwt_bwtupdate_core(bwt_t *bwt)
 {
 	bwtint_t i, k, c[4], n_occ;
